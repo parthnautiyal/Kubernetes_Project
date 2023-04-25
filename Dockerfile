@@ -11,4 +11,4 @@ RUN unzip photogenic.zip
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
-EXPOSE 80 22 24
+EXPOSE 80 
