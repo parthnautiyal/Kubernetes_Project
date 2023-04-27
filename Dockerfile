@@ -1,5 +1,5 @@
 FROM centos:latest
-MAINTAINER vikashashoke@gmail.com
+MAINTAINER parthnautiyal2002@gmail.com
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 RUN yum update -y && yum install -y httpd zip unzip
@@ -9,4 +9,4 @@ RUN unzip photogenic.zip
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-EXPOSE 80 22
+EXPOSE 80 
