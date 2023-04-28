@@ -1,14 +1,13 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: mrdevops
-  labels:
-    app: mrdevops
+  name: mrdevops-service
 spec:
-  ports:
-    - port: 9000
-      targetPort: 80
-      nodePort: 31000
+  type: NodePort
   selector:
     app: mrdevops
-  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 31000
